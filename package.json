@@ -1,0 +1,24 @@
+{
+  "name": "action-types-creator",
+  "version": "0.0.9",
+  "description": "action type creator for react or vue",
+  "main": "index.js",
+  "scripts": {
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fedorjia/action-type-creator.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "action-type-creator"
+  ],
+  "author": "fedor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fedorjia/action-type-creator/issues"
+  },
+  "homepage": "https://github.com/fedorjia/action-type-creator#readme"
+}
