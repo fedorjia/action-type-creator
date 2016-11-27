@@ -27,16 +27,8 @@ const types = {
 ```
 import { createActionType } from 'action-types-creator';
 
-const types = {
-	user: [ 'UPDATE',  '_LOAD_' ]
-}
+export let user = createActionType('user', ['UPDATE', '_LOAD_']);
 
-const o = createActionType(types);
-
-// export each action type
-for(const item in o) {
-	exports[item] = o[item];
-}
 ```
 
 then

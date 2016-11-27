@@ -23,23 +23,19 @@ function endsWith(s0, s1) {
  * 	        USER_LOAD, USER_LOAD_REQUEST, USER_LOAD_SUCCESS, USER_LOAD_FAILURE
  */
 
-exports.createActionType = function(types) {
+exports.createActionType = function(alias, types) {
 	var o = {};
-	for(var type in types) {
-		o[type] = {};
-		const items = types[type];
-		for(var i=0; i<items.length; i++) {
-			var item = items[i];
-			item = item.toUpperCase();
-			if(startsWith(item, '_') && endsWith(item, '_')) {
-				item = item.substring(1, item.length - 1);
-				o[type][item] = type.toUpperCase() + '_' + item;
-				o[type][item + '_REQUEST'] = type.toUpperCase() + '_' + item + '_REQUEST';
-				o[type][item + '_SUCCESS'] = type.toUpperCase() + '_' + item + '_SUCCESS';
-				o[type][item + '_FAILURE'] = type.toUpperCase() + '_' + item + '_FAILURE';
-			} else {
-				o[type][item] = type.toUpperCase() + '_' + item;
-			}
+	for(var i=0; i<types.length; i++) {
+		var item = types[i];
+		item = item.toUpperCase();
+		if(startsWith(item, '_') && endsWith(item, '_')) {
+			item = item.substring(1, item.length - 1);
+			o[item] = alias.toUpperCase() + '_' + item;
+			o[item + '_REQUEST'] = alias.toUpperCase() + '_' + item + '_REQUEST';
+			o[item + '_SUCCESS'] = alias.toUpperCase() + '_' + item + '_SUCCESS';
+			o[item + '_FAILURE'] = alias.toUpperCase() + '_' + item + '_FAILURE';
+		} else {
+			o[item] = alias.toUpperCase() + '_' + item;
 		}
 	}
 	return o;
